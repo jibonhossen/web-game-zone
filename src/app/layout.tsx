@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
 
 // ... imports ...
 
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} antialiased bg-darker text-white font-body selection:bg-primary/50 selection:text-white`}
       >
+        <AnalyticsTracker />
         <Navbar />
         <main className="min-h-screen pt-16">
           {children}
