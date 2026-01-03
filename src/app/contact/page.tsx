@@ -26,7 +26,7 @@ export default function Contact() {
                             <div>
                                 <h3 className="font-bold text-lg mb-1">Email Us</h3>
                                 <p className="text-gray-400 text-sm mb-2">For general inquiries and support.</p>
-                                <a href="mailto:support@gamezonebd.space" className="text-white hover:text-primary transition-colors">support@gamezone.app</a>
+                                <a href="mailto:support@gamezonebd.space" className="text-white hover:text-primary transition-colors">support@gamezonebd.space</a>
                             </div>
                         </Card>
 
