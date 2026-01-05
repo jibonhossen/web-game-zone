@@ -1,19 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
-import { Mail, MessageSquare, Phone, Send, Sparkles, MapPin } from 'lucide-react';
+import { Mail, MessageSquare, Phone, Send, Sparkles } from 'lucide-react';
 
 export default function Contact() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    });
-
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -29,14 +20,8 @@ export default function Contact() {
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.6, ease: "easeOut" }
+            transition: { duration: 0.6, ease: "easeOut" as const }
         }
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle form submission
-        console.log(formData);
     };
 
     const contactCards = [
@@ -173,7 +158,7 @@ export default function Contact() {
                         </motion.div>
 
                         {/* Contact Form */}
-                
+
                     </div>
 
                     {/* Bottom CTA */}
