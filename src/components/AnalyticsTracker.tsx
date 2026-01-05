@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import blogApi from '@/lib/blogApi';
 
-export default function AnalyticsTracker() {
+function AnalyticsTrackerInner() {
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const startTimeRef = useRef<number>(Date.now());
@@ -51,4 +51,12 @@ export default function AnalyticsTracker() {
     }, [pathname, searchParams]);
 
     return null;
+}
+
+export default function AnalyticsTracker() {
+    return (
+        <Suspense fallback={null}>
+            <AnalyticsTrackerInner />
+        </Suspense>
+    );
 }

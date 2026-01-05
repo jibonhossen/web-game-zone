@@ -1,6 +1,6 @@
 // Blog API client for game-zone-web
 
-const API_BASE = process.env.NEXT_PUBLIC_BLOG_API_URL || 'https://blog-server.jibonhossen-dev.workers.dev';
+const API_BASE = process.env.NEXT_PUBLIC_BLOG_API_URL ;
 
 class BlogApi {
     private token: string | null = null;
