@@ -110,56 +110,51 @@ export default function Contact() {
                         </p>
                     </motion.div>
 
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-                        {/* Contact Cards */}
-                        <motion.div
-                            className="space-y-5"
-                            variants={containerVariants}
-                            initial="hidden"
-                            animate="visible"
-                        >
-                            {contactCards.map((card, index) => (
-                                <motion.div key={index} variants={itemVariants}>
-                                    <a href={card.link} target="_blank" rel="noopener noreferrer">
-                                        <Card
-                                            className="relative p-6 group cursor-pointer overflow-hidden hover:-translate-y-1 transition-all duration-300"
-                                            glow
-                                        >
-                                            {/* Card Glow Effect */}
-                                            <div className={`absolute -top-20 -right-20 w-40 h-40 ${card.bgGlow} rounded-full filter blur-[80px] opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
+                    {/* Contact Cards - Centered Grid */}
+                    <motion.div
+                        className="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto"
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        {contactCards.map((card, index) => (
+                            <motion.div key={index} variants={itemVariants}>
+                                <a href={card.link} target="_blank" rel="noopener noreferrer">
+                                    <Card
+                                        className="relative p-5 sm:p-6 group cursor-pointer overflow-hidden hover:-translate-y-1 transition-all duration-300 h-full"
+                                        glow
+                                    >
+                                        {/* Card Glow Effect */}
+                                        <div className={`absolute -top-20 -right-20 w-40 h-40 ${card.bgGlow} rounded-full filter blur-[80px] opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
 
-                                            <div className="relative flex items-start gap-5">
-                                                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${card.gradient} p-[1px] shrink-0`}>
-                                                    <div className="w-full h-full rounded-2xl bg-dark/90 flex items-center justify-center text-white">
-                                                        {card.icon}
-                                                    </div>
-                                                </div>
-                                                <div className="flex-1">
-                                                    <h3 className="font-heading font-bold text-lg mb-1 group-hover:text-primary transition-colors">
-                                                        {card.title}
-                                                    </h3>
-                                                    <p className="text-gray-500 text-sm mb-2">
-                                                        {card.description}
-                                                    </p>
-                                                    <span className={`text-sm font-medium bg-gradient-to-r ${card.gradient} bg-clip-text text-transparent`}>
-                                                        {card.contact}
-                                                    </span>
-                                                </div>
-                                                <div className="self-center opacity-0 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-2 transition-all duration-300">
-                                                    <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${card.gradient} flex items-center justify-center`}>
-                                                        <Send className="w-4 h-4 text-white" />
-                                                    </div>
+                                        <div className="relative flex items-start gap-4 sm:gap-5">
+                                            <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${card.gradient} p-[1px] shrink-0`}>
+                                                <div className="w-full h-full rounded-xl sm:rounded-2xl bg-dark/90 flex items-center justify-center text-white">
+                                                    {card.icon}
                                                 </div>
                                             </div>
-                                        </Card>
-                                    </a>
-                                </motion.div>
-                            ))}
-                        </motion.div>
-
-                        {/* Contact Form */}
-
-                    </div>
+                                            <div className="flex-1 min-w-0">
+                                                <h3 className="font-heading font-bold text-base sm:text-lg mb-1 group-hover:text-primary transition-colors">
+                                                    {card.title}
+                                                </h3>
+                                                <p className="text-gray-500 text-xs sm:text-sm mb-2">
+                                                    {card.description}
+                                                </p>
+                                                <span className={`text-xs sm:text-sm font-medium bg-gradient-to-r ${card.gradient} bg-clip-text text-transparent break-all`}>
+                                                    {card.contact}
+                                                </span>
+                                            </div>
+                                            <div className="hidden sm:block self-center opacity-0 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-2 transition-all duration-300">
+                                                <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${card.gradient} flex items-center justify-center`}>
+                                                    <Send className="w-4 h-4 text-white" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Card>
+                                </a>
+                            </motion.div>
+                        ))}
+                    </motion.div>
 
                     {/* Bottom CTA */}
                     <motion.div

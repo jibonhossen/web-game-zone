@@ -175,81 +175,90 @@ function BlogPostContent() {
             </div>
 
             {/* Hero */}
-            <div className={`w-full h-[50vh] min-h-[400px] bg-gradient-to-br ${categoryColors[post.category] || categoryColors['General']} relative overflow-hidden`}>
+            <div className={`w-full h-[40vh] sm:h-[50vh] min-h-[300px] sm:min-h-[400px] bg-gradient-to-br ${categoryColors[post.category] || categoryColors['General']} relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950" />
                 <div className="absolute inset-0 flex items-center justify-center">
                     <motion.span
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="text-[150px] md:text-[200px] opacity-50"
+                        className="text-[80px] sm:text-[120px] md:text-[200px] opacity-50"
                     >
                         {post.icon}
                     </motion.span>
                 </div>
 
                 {/* Back button */}
-                <div className="absolute top-8 left-8">
+                <div className="absolute top-4 left-4 sm:top-8 sm:left-8">
                     <Link
                         href="/blog"
-                        className="inline-flex items-center gap-2 px-4 py-2 glass rounded-xl text-white/80 hover:text-white transition-colors"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 glass rounded-lg sm:rounded-xl text-sm sm:text-base text-white/80 hover:text-white transition-colors"
                     >
-                        <ArrowLeft size={18} />
-                        Back to Blog
+                        <ArrowLeft size={16} className="sm:hidden" />
+                        <ArrowLeft size={18} className="hidden sm:block" />
+                        <span className="hidden sm:inline">Back to Blog</span>
+                        <span className="sm:hidden">Back</span>
                     </Link>
                 </div>
             </div>
 
             {/* Content */}
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 -mt-32 relative z-10 pb-20">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 -mt-16 sm:-mt-32 relative z-10 pb-12 sm:pb-20">
                 <motion.article
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="glass rounded-3xl p-8 md:p-12 border border-white/10"
+                    className="glass rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 border border-white/10"
                 >
                     {/* Category & Meta */}
-                    <div className="flex flex-wrap items-center gap-4 mb-6">
-                        <span className="text-sm font-semibold uppercase tracking-wider text-primary bg-primary/10 px-4 py-1.5 rounded-full">
+                    <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                        <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full w-fit">
                             {post.category}
                         </span>
-                        <div className="flex items-center gap-4 text-gray-400 text-sm">
+                        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-gray-400 text-xs sm:text-sm">
                             <span className="flex items-center gap-1.5">
-                                <Calendar size={14} /> {formatDate(post.published_at)}
+                                <Calendar size={12} className="sm:hidden" />
+                                <Calendar size={14} className="hidden sm:block" />
+                                {formatDate(post.published_at)}
                             </span>
                             <span className="flex items-center gap-1.5">
-                                <Clock size={14} /> {estimateReadTime(post.content)} min read
+                                <Clock size={12} className="sm:hidden" />
+                                <Clock size={14} className="hidden sm:block" />
+                                {estimateReadTime(post.content)} min
                             </span>
                             <span className="flex items-center gap-1.5">
-                                <Eye size={14} /> {post.views} views
+                                <Eye size={12} className="sm:hidden" />
+                                <Eye size={14} className="hidden sm:block" />
+                                {post.views}
                             </span>
                         </div>
                     </div>
 
                     {/* Title */}
-                    <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 leading-tight">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
                         {post.title}
                     </h1>
 
                     {/* Excerpt */}
-                    <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
                         {post.excerpt}
                     </p>
 
                     {/* Author & Share */}
-                    <div className="flex items-center justify-between py-6 border-y border-white/10 mb-10">
-                        <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-xl font-bold">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 py-4 sm:py-6 border-y border-white/10 mb-6 sm:mb-10">
+                        <div className="flex items-center gap-3 sm:gap-4">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-lg sm:text-xl font-bold">
                                 {post.author_name.charAt(0)}
                             </div>
                             <div>
-                                <p className="font-semibold">{post.author_name}</p>
-                                <p className="text-sm text-gray-400">Author</p>
+                                <p className="font-semibold text-sm sm:text-base">{post.author_name}</p>
+                                <p className="text-xs sm:text-sm text-gray-400">Author</p>
                             </div>
                         </div>
                         <button
                             onClick={sharePost}
-                            className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-xl transition-all text-gray-400 hover:text-white"
+                            className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 hover:bg-white/10 rounded-lg sm:rounded-xl transition-all text-gray-400 hover:text-white text-sm sm:text-base"
                         >
-                            <Share2 size={18} />
+                            <Share2 size={16} className="sm:hidden" />
+                            <Share2 size={18} className="hidden sm:block" />
                             Share
                         </button>
                     </div>
