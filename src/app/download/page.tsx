@@ -54,7 +54,7 @@ export default function DownloadPage() {
                                 ))}
                             </div>
 
-                            <a href="https://gqmfdoapiuecboeyajih.supabase.co/storage/v1/object/public/game-zone/game-zone-v1-1-26.apk">
+                            <a href="https://gqmfdoapiuecboeyajih.supabase.co/storage/v1/object/public/game-zone/game-zone.apk">
                                 <Button size="lg" className="w-full">
                                     <Download className="mr-2 w-5 h-5" /> Download APK
                                 </Button>
