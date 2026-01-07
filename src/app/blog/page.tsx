@@ -345,21 +345,7 @@ export default function Blog() {
                         </p>
                     </motion.div>
                 )}
-
-                {/* Admin Link */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    className="mt-16 text-center"
-                >
-                    <Link
-                        href="/blog/admin"
-                        className="text-gray-500 hover:text-primary transition-colors text-sm"
-                    >
-                        Admin Panel →
-                    </Link>
-                </motion.div>
+                
             </div>
         </div>
     );
