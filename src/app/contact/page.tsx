@@ -38,8 +38,8 @@ export default function Contact() {
             icon: <MessageSquare className="w-6 h-6" />,
             title: "Telegram",
             description: "Join our Telegram channel.",
-            contact: "t.me/gamezonebd",
-            link: "https://t.me/gamezonebd",
+            contact: "t.me/Indadul",
+            link: "https://t.me/Indadul_KG_5",
             gradient: "from-cyan-500 to-blue-600",
             bgGlow: "bg-cyan-500"
         },
@@ -52,6 +52,16 @@ export default function Contact() {
             gradient: "from-emerald-500 to-green-600",
             bgGlow: "bg-emerald-500"
         },
+        {
+            icon: <MessageSquare className="w-6 h-6" />,
+            title: "WhatsApp Channel",
+            description: "Join our WhatsApp channel.",
+            // contact: "+880 1400-389396",
+            link: "https://whatsapp.com/channel/0029VbBjGGL5kg7AOuozm60n",
+            gradient: "from-emerald-500 to-green-600",
+            bgGlow: "bg-emerald-500"
+        },
+
         {
             icon: <Phone className="w-6 h-6" />,
             title: "24/7 Support",

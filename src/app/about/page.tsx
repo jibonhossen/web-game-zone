@@ -17,10 +17,10 @@ export default function About() {
                 {/* Stats */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-20">
                     {[
-                        { label: "Active Players", value: "50K+" },
-                        { label: "Tournaments", value: "1000+" },
-                        { label: "Prize Pool", value: "$500K+" },
-                        { label: "Countries", value: "20+" },
+                        // { label: "Active Players", value: "50K+" },
+                        { label: "Tournaments", value: "100+" },
+                        { label: "Prize Pool", value: "5K+" },
+                        // { label: "Countries", value: "20+" },
                     ].map((stat, i) => (
                         <Card key={i} className="p-4 sm:p-6 text-center bg-white/5">
                             <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1 sm:mb-2">
@@ -37,7 +37,7 @@ export default function About() {
                     <div className="order-last md:order-first space-y-4 sm:space-y-6 text-gray-300">
                         <h2 className="font-heading text-2xl sm:text-3xl font-bold text-white">Our Story</h2>
                         <p className="text-sm sm:text-base leading-relaxed">
-                            Started in 2024, Game Zone emerged from a simple idea: Mobile gamers deserve a professional competitive platform. We saw the gap between casual play and professional esports, and we built Game Zone to bridge it.
+                            Started in 2025, Game Zone emerged from a simple idea: Mobile gamers deserve a professional competitive platform. We saw the gap between casual play and professional esports, and we built Game Zone to bridge it.
                         </p>
                         <p className="text-sm sm:text-base leading-relaxed">
                             Today, we host daily tournaments across multiple game titles, providing a seamless experience with automated matchmaking and instant rewards.
